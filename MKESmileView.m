@@ -107,11 +107,19 @@
     
     CGContextAddQuadCurveToPoint(context, frame.origin.x+(0.5*frame.size.width), frame.origin.y+((0.4+(0.6*self.value))*frame.size.height),frame.origin.x+(0.8*frame.size.width), frame.origin.y+(0.7*frame.size.height));
     
+    CGContextSetLineCap(context, kCGLineCapRound);
+
     CGContextSetStrokeColorWithColor(context, self.smileColor.CGColor);
 
     CGContextSetLineWidth(context, self.smileStrokeWidth);
-    CGContextSetLineCap(context, kCGLineCapRound);
     CGContextStrokePath(context);
+
+    
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self setNeedsDisplay];
 }
 
 @end
