@@ -58,16 +58,13 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    NSLog(@"Before setNeedsDisplay");
     [self setNeedsDisplay];
-    NSLog(@"After setNeedsDisplay");
 }
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    NSLog(@"drawRect");
     // Drawing code
     CGRect frame = self.frame;
     if (frame.size.width > frame.size.height) {
